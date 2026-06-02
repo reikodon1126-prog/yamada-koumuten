@@ -139,6 +139,7 @@ header{
     text-decoration:none;
     font-weight:500;
     position:relative;
+    white-space: nowrap;
 }
 .nav-menu a::after{
     content:"";
@@ -167,6 +168,7 @@ header{
     text-decoration:none;
     font-size:1.1rem;
     font-weight:700;
+    white-space: nowrap;
 }
 
 /* お問い合わせボタン */
@@ -177,6 +179,7 @@ header{
     padding:12px 24px;
     border-radius:5px;
     transition:.3s;
+    white-space: nowrap;
 }
 
 .header-btn:hover{
@@ -339,11 +342,93 @@ footer{
     padding:30px;
 }
 
+
+/* =========================
+   フェードアップ
+========================= */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   ハンバーガーメニュー
+========================= */
+
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    color:#1f365c;
+    cursor:pointer;
+}
+
 /* Responsive */
 @media(max-width:768px){
 
-     .nav-menu{
+    /* 電話番号非表示 */
+    .header-tel{
         display:none;
+    }
+
+    /* お問い合わせボタン非表示 */
+    .header-btn{
+        display:none;
+    }
+
+    /* ハンバーガー表示 */
+    .hamburger{
+        display:block;
+    }
+
+    /* メニュー */
+    .nav-menu{
+
+        display:none;
+        position:absolute;
+
+        top:80px;
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        box-shadow:
+        0 10px 30px rgba(0,0,0,.1);
+    }
+
+    .nav-menu.active{
+        display:block;
+    }
+
+    .nav-menu ul{
+        display:flex;
+        flex-direction:column;
+        gap:0;
+    }
+
+    .nav-menu li{
+        border-bottom:1px solid #eee;
+    }
+
+    .nav-menu a{
+
+        display:block;
+
+        padding:18px 24px;
+
+        white-space:nowrap;
     }
 
     .header-tel{
@@ -352,10 +437,6 @@ footer{
 
     .header-btn{
         display:none;
-    }
-
-    .hamburger{
-        display:block;
     }
 
     .logo-main{
@@ -371,9 +452,35 @@ footer{
         grid-template-columns:1fr;
     }
 
-    section{
+    .section{
         padding:60px 0;
     }
+
+    .mobile-contact{
+    padding:20px;
+    }
+
+    .mobile-tel{
+
+    display:block;
+
+    text-align:center;
+
+    background:#f5f0e8;
+
+    padding:15px;
+
+    border-radius:6px;
+
+    margin-bottom:10px;
+
+    color:#1f365c;
+
+    text-decoration:none;
+
+    font-weight:bold;
+    }
+
 }
 </style>
 
@@ -405,7 +512,7 @@ footer{
         </a>
 
         <!-- ナビ -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
 
             <ul>
                 <li><a href="#about">会社紹介</a></li>
@@ -430,28 +537,31 @@ footer{
         </div>
 
         <!-- ハンバーガーボタン -->
-        <button class="hamburger" id="hamburger">
-            ☰
+        <button
+           type="button"
+           id="hamburger"
+           class="hamburger">
+           ☰
         </button>
-
     </div>
 
+   
 </header>
 
 <section class="hero">
     <div class="container">
-        <h1>地域に根ざした家づくり</h1>
-        <p>鹿児島市の注文住宅・リフォームなら山田工務店</p>
+        <h1>鹿児島市の注文住宅・リフォームなら山田工務店</h1>
+        <p>創業30年。鹿児島市の住まいづくりを支える地域密着工務店</p>
         <a href="#contact" class="btn">お問い合わせはこちら</a>
     </div>
 </section>
 
 <section id="about" class="about">
     <div class="container">
-        <h2>私たちについて</h2>
+        <h2 class="fade-up">私たちについて</h2>
 
 
-    <div class="about-text">
+   <div class="about-text fade-up">
         <p>
             創業30年。<br>
             鹿児島市を中心に地域密着で住まいづくりを行っています。<br>
@@ -593,26 +703,56 @@ footer{
 
 
 <!-- JavaScript -->
+<!--ハンバーガーメニューを開閉するJavaScript-->
 <script>
 
 const hamburger =
 document.getElementById('hamburger');
 
-const nav =
-document.querySelector('.nav-menu');
+const navMenu =
+document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
 
-    if(nav.style.display === 'block'){
-        nav.style.display = 'none';
-    }else{
-        nav.style.display = 'block';
-    }
+    navMenu.classList.toggle('active');
+
+    hamburger.textContent =
+        navMenu.classList.contains('active')
+        ? '✕'
+        : '☰';
 
 });
 
 </script>
 
+<!--下からふわっと表示するフェードインアニメーション-->
+<script>
+
+const fadeElements =
+document.querySelectorAll('.fade-up');
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+fadeElements.forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
