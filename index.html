@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<!-- 文字コード -->
+<meta charset="UTF-8">
+<!-- 文書の概要 -->
+<meta name="description" content="鹿児島市で注文住宅・リフォーム・外構工事なら山田工務店。創業30年の地域密着工務店です。住まいに関するご相談はお気軽にお問い合わせください。">
+<!-- 文書の内容を表すキーワード -->
+<meta name="keywords" content="新築,リフォーム,外構工事,修理修繕,一戸建て,注文住宅">
+<!-- 著作者 -->
+<meta name="author" content="山田工務店広報担当者">
+<!-- スマホ対応 -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- ブラウザタブに表示されるタイトル -->
+<title>鹿児島市の注文住宅・リフォームなら山田工務店</title>
+
+
+<!-- Google Fontsから「Noto Sans JP」というフォントを読み込むための設定-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:#333;
+    line-height:1.8;
+    background:#fff;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1f365c;
+    font-size:2rem;
+}
+
+.btn{
+    display:inline-block;
+    background:#c9a063;
+    color:#fff;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#b58d52;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ヘッダー */
+header{
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:999;
+    height:80px;
+    border-bottom:1px solid #e5e5e5;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.header-inner{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+/* ロゴ */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    color:#1f365c;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo-main{
+    color:#1f365c;
+    font-size:1.5rem;
+    font-weight:700;
+    line-height:1.2;
+}
+
+.logo-sub{
+    font-size:.7rem;
+    letter-spacing:2px;
+    color:#999;
+}
+
+/* メニュー */
+.nav-menu ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-menu a{
+    color:#333;
+    text-decoration:none;
+    font-weight:500;
+    position:relative;
+}
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#c7a36a;
+    transition:.3s;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+/* 電話番号 */
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.header-tel{
+    color:#1f365c;
+    text-decoration:none;
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+/* お問い合わせボタン */
+.header-btn{
+    background:#c7a36a;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.header-btn:hover{
+    opacity:.9;
+}
+
+/* ハンバーガーボタン */
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    color:#1f365c;
+    cursor:pointer;
+}
+
+/* ファーストビュー部分 */
+.hero{
+    background:
+    linear-gradient(
+        rgba(31,54,92,0.5),
+        rgba(31,54,92,0.5)
+    ),
+    url("images/1house.png") center/cover;
+    color:#fff;
+    text-align:center;
+    padding:160px 20px;
+}
+
+
+.hero h1,
+.hero p{
+    color:#fff;
+}
+
+
+.hero h1{
+    font-size:2.8rem;
+    color:#ffffff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+
+
+
+/* About */
+.about{
+    background:#fff;
+}
+
+.about-text{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Service */
+.service{
+    background:#fafafa;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:#fff;
+    padding:30px;
+    text-align:center;
+    border:1px solid #eee;
+}
+
+.card h3{
+    color:#1f365c;
+    margin-bottom:10px;
+}
+
+/* Works */
+.works-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.work{
+    overflow:hidden;
+}
+
+.work img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+/* Contact */
+.contact{
+    background:#f5f0e8;
+    text-align:center;
+}
+
+.tel{
+    font-size:2rem;
+    font-weight:bold;
+    color:#1f365c;
+    margin-bottom:20px;
+}
+
+
+form{
+    max-width:600px;
+    margin:40px auto 0;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+}
+
+textarea{
+    height:180px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+/* Company */
+.company table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.company th,
+.company td{
+    border:1px solid #ddd;
+    padding:15px;
+}
+
+.company th{
+    background:#f8f8f8;
+    width:30%;
+}
+
+/* Footer */
+footer{
+    background:#1f365c;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+     .nav-menu{
+        display:none;
+    }
+
+    .header-tel{
+        display:none;
+    }
+
+    .header-btn{
+        display:none;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    .logo-main{
+        font-size:1.2rem;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .service-grid,
+    .works-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:60px 0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container header-inner">
+
+        <!-- ロゴ -->
+        <a href="#" class="logo">
+            <!-- 家アイコン -->
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 11L12 3l9 8M5 10v10h14V10" />
+            </svg>
+
+            <div class="logo-text">
+                <span class="logo-main">山田工務店</span>
+                <span class="logo-sub">
+                    YAMADA CONSTRUCTION
+                </span>
+            </div>
+
+        </a>
+
+        <!-- ナビ -->
+        <nav class="nav-menu">
+
+            <ul>
+                <li><a href="#about">会社紹介</a></li>
+                <li><a href="#service">事業内容</a></li>
+                <li><a href="#works">施工事例</a></li>
+                <li><a href="#company">会社概要</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- 右側 -->
+        <div class="header-right">
+
+            <a href="tel:0990000000" class="header-tel">
+                ☎ 099-000-0000
+            </a>
+
+            <a href="#contact" class="header-btn">
+                お問い合わせ
+            </a>
+
+        </div>
+
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>地域に根ざした家づくり</h1>
+        <p>鹿児島市の注文住宅・リフォームなら山田工務店</p>
+        <a href="#contact" class="btn">お問い合わせはこちら</a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>私たちについて</h2>
+
+
+    <div class="about-text">
+        <p>
+            創業30年。<br>
+            鹿児島市を中心に地域密着で住まいづくりを行っています。<br>
+            新築住宅からリフォームまで、お客様の暮らしに寄り添ったご提案をいたします。
+        </p>
+    </div>
+</div>
+
+
+</section>
+
+<section id="service" class="service">
+    <div class="container">
+        <h2>事業内容</h2>
+
+
+    <div class="service-grid">
+
+        <div class="card">
+            <h3>新築住宅</h3>
+            <p>ご家族の理想を形にする注文住宅をご提案します。</p>
+        </div>
+
+        <div class="card">
+            <h3>リフォーム</h3>
+            <p>快適で住みやすい住空間へ改善します。</p>
+        </div>
+
+        <div class="card">
+            <h3>外構工事</h3>
+            <p>門まわりや駐車場など外構全般に対応します。</p>
+        </div>
+
+    </div>
+</div>
+
+
+</section>
+
+<section id="works">
+    <div class="container">
+        <h2>施工事例</h2>
+
+
+    <div class="works-grid">
+        <div class="work">
+          <img src="images/work1.png" alt="施工事例1">
+        </div>
+       <div class="work">
+          <img src="images/work2.png" alt="施工事例1">
+        </div>
+        <div class="work">
+          <img src="images/work3.png" alt="施工事例1">
+        </div>
+    </div>
+
+</div>
+
+
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+
+
+    <h2>お問い合わせ</h2>
+
+    <div class="tel">
+      <a href="tel:0990000000">
+          TEL: 099-000-0000
+      </a>
+    </div>
+    <p>
+        新築・リフォームのご相談はお気軽にお問い合わせください。
+    </p>
+    <br>
+<!--    <label for="name">お名前</label>
+      <input id="name" type="text">
+
+    <label for="email">メールアドレス</label>
+      <input id="email" type="email">
+
+    <label for="message">お問い合わせ内容</label>
+      <textarea id="message"></textarea>
+-->
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfTir2kLvhREXtRdemNHQMsi5bjChbce2AnzIXiVA_ypm1Jag/viewform?usp=publish-editor"
+        target="_blank"
+        class="btn">
+        お問い合わせフォームはこちら
+      </a>
+
+</div>
+
+
+</section>
+
+<section id="company" class="company">
+    <div class="container">
+
+
+    <h2>会社概要</h2>
+
+    <table>
+        <tr>
+            <th>会社名</th>
+            <td>山田工務店</td>
+        </tr>
+
+        <tr>
+            <th>所在地</th>
+            <td>鹿児島県鹿児島市〇〇町1-2-3</td>
+        </tr>
+
+        <tr>
+            <th>営業時間</th>
+            <td>9:00〜18:00</td>
+        </tr>
+
+        <tr>
+            <th>定休日</th>
+            <td>日曜日・祝日</td>
+        </tr>
+
+        <tr>
+            <th>事業内容</th>
+            <td>新築住宅・リフォーム・外構工事</td>
+        </tr>
+    </table>
+
+</div>
+
+
+</section>
+
+<footer>
+    <p>© 山田工務店 All Rights Reserved.</p>
+</footer>
+
+
+<!-- JavaScript -->
+<script>
+
+const hamburger =
+document.getElementById('hamburger');
+
+const nav =
+document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+
+    if(nav.style.display === 'block'){
+        nav.style.display = 'none';
+    }else{
+        nav.style.display = 'block';
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>
